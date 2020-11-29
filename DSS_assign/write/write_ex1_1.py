@@ -31,7 +31,7 @@ def w_ex1_1(e1, e2, e3, pre):
         # 使用cursor()方法获取操作游标
         cursor = db.cursor()
         insert_sql = "INSERT INTO " + "predict_sales" + \
-                     " (`X_one`, `X_two`, `X_three`, `pre_sales`) " \
+                     " (`price`, `expenses`, `production`, `pre_sales`) " \
                      "values (%s, %s, %s, %s)"
         val = (e1, e2, e3, pre)
         cursor.execute(insert_sql, val)

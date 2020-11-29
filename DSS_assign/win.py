@@ -74,13 +74,13 @@ ft = tf.Font(size=20)
 tk.Label(frame0, text='决策支持系统', width=0, height=4, font=ft).grid(row=0, column=0)
 # -------------ex1_1------------------------------------------------------
 # 创建输入框entry
-tk.Label(frame2, text='X1', width=0).grid(row=0, column=0)
+tk.Label(frame2, text='price', width=8).grid(row=0, column=0)
 e1 = tk.Entry(frame2, width=8)
 e1.grid(row=0, column=1)
-tk.Label(frame2, text='X2', width=0).grid(row=1, column=0)
+tk.Label(frame2, text='expense', width=8).grid(row=1, column=0)
 e2 = tk.Entry(frame2, width=8)
 e2.grid(row=1, column=1)
-tk.Label(frame2, text='X3', width=2).grid(row=2, column=0)
+tk.Label(frame2, text='production', width=8).grid(row=2, column=0)
 e3 = tk.Entry(frame2, width=8)
 e3.grid(row=2, column=1)
 
@@ -151,7 +151,6 @@ def km_cla():
     km1.delete(1.0, 'end')
     km2.delete(1.0, 'end')
     km3.delete(1.0, 'end')
-
     data = km.ex2()
     print(data)
     km1.insert('insert', data[0])

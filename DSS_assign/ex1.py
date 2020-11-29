@@ -52,14 +52,14 @@ def ex1_1():
     plt.savefig("img/pair.jpg")
     plt.show()
 
-    X_train, X_test, Y_train, Y_test = train_test_split(sales.iloc[:, 2:], sales.sales, train_size=.80, random_state=0)
-    # print("原始数据特征:", sales.iloc[:, 2:].shape,
-    #       ",训练数据特征:", X_train.shape,
-    #       ",测试数据特征:", X_test.shape)
-    #
-    # print("原始数据标签:", sales.sales.shape,
-    #       ",训练数据标签:", Y_train.shape,
-    #       ",测试数据标签:", Y_test.shape)
+    X_train, X_test, Y_train, Y_test = train_test_split(sales.iloc[:, 2:], sales.sales, train_size=.70, random_state=0)
+    print("原始数据特征:", sales.iloc[:, 2:].shape,
+          ",训练数据特征:", X_train.shape,
+          ",测试数据特征:", X_test.shape)
+
+    print("原始数据标签:", sales.sales.shape,
+          ",训练数据标签:", Y_train.shape,
+          ",测试数据标签:", Y_test.shape)
 
     model = LinearRegression()
     model.fit(X_train, Y_train)
@@ -108,11 +108,11 @@ def ex1_2():
     res = op.linprog(-c, A_ub, B_ub, bounds=(x1, x2, x3))
     print(res)
     print("---------------------------------------------")
-    print("最大值为:", -res.fun)
+    print("最大值为:", int(-res.fun))
     print("户外广告：", round(res.x[0]), "专业杂志：", round(res.x[1]), "其他形式：", round(res.x[2]))
-    return -res.fun, round(res.x[0]), round(res.x[1]), round(res.x[2])
+    return int(-res.fun), round(res.x[0]), round(res.x[1]), round(res.x[2])
 
 
 if __name__ == '__main__':
-    # ex1_1()
+    ex1_1()
     ex1_2()
